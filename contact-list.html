@@ -15,10 +15,8 @@
     <ul>
       <template is="dom-repeat" items="{{contacts}}">
         <li>
-          <contact-listing 
-            name="{{item.name}}"
-            email="{{item.email}}"
-            img="{{item.img}}">              
+          <!-- <contact-listing name="{{item.name}}" email="{{item.email}}" img="{{item.img}}"> -->
+          <contact-listing content="{{item}}">              
           </contact-listing>
         </li>
       </template>

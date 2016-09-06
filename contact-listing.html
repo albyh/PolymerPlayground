@@ -21,10 +21,10 @@
     </style>
     <div class="listing-wrapper">
       <div>
-        <img src="{{img}}">
+        <img src="{{content.img}}">
       </div>
-      <h5>{{name}}</h5>
-      <span>{{email}}</span>
+      <h5>{{content.name}}</h5>
+      <span>{{content.email}}</span>
     </div>
 
   </template>
@@ -34,9 +34,7 @@
 
       is: 'contact-listing',
       properties: {
-        name: String,
-        email: String,
-        img: String
+        content: Object
       }
 
     });
