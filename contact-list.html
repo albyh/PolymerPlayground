@@ -1,0 +1,67 @@
+<!-- to import elements into this element? -->
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="contact-list">
+  <template>
+    <style>
+      ul {
+       list-style: none;
+      }
+      li {
+        display: flex;
+        margin-bottom: 40px;
+      }
+      li img {
+        border-radius: 20%;
+        margin: 20px 30px 0 0;
+      }
+      li + li {
+        border-top: solid 1px #666;
+      }
+      h3 {
+        margin: 0 40px 0 0;
+        line-height: 80px;
+      }
+      li span {
+        line-height: 80px;
+      }
+    </style>
+    <ul>
+      <template is="dom-repeat" items="{{contacts}}">
+        <li>
+          <div>
+            <img src="{{item.img}}">
+          </div>
+          <h3>{{item.name}}</h3>
+          <span>{{item.email}}</span>
+        </li>
+      </template>
+    </ul>
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'contact-list',
+      ready: function() {
+        this.contacts = [
+          {
+            name: "Mary",
+            email: "mary@email.com",
+            img: "https://randomuser.me/api/portraits/thumb/women/10.jpg"
+          },
+          {
+            name: "Terri",
+            email: "terri@email.com",
+            img: "https://randomuser.me/api/portraits/thumb/women/2.jpg"
+          },
+          {
+            name: "Susan",
+            email: "susan@email.com",
+            img: "https://randomuser.me/api/portraits/thumb/women/6.jpg"
+          }       
+        ]
+      }
+    });
+  </script>
+</dom-module>
